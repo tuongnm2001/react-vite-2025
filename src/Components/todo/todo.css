@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+}
+.todo-container{
+    max-width: 60rem;
+    margin: 5rem auto;
+    padding: 0 20px;
+}
+
+.title{
+    font-size: 3.4rem;
+    text-align: center;
+}
+
+.todo-add-container{    
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    gap: 20px;    
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    height: 4rem;
+    width: 26rem;
+}
+
+.btn-add{
+    height: 4rem;
+    font-size: 2rem;
+    padding: 6px 22px;
+    background-color: #398bd3;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.data-container{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todo-image{
+   margin-top: 2rem;
+   text-align: center;
+}
+
+.logo {
+  height: 8em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}

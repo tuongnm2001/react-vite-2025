@@ -2,16 +2,30 @@
 
 const TodoData = (props) => {
 
-    const { name, data } = props
+    const { todoList, deleteItem } = props;
+
+    const handleDelete = (id) => {
+        deleteItem(id)
+    }
+
     return (
-        <>
-            <div className="data-container">
-                <div>Play Footbal</div>
-                <div>Watching TV</div>
-                <div>{name}</div>
-                <div>{data.province}</div>
-            </div>
-        </>
+
+        <div className="data-container">
+            {
+                todoList.map((item, index) => {
+                    return (
+                        <div key={item.id}>
+                            <div className="content">
+                                {item.name}
+                                <button className="btn-delete" onClick={() => handleDelete(item.id)}>Delete</button>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+
+        </div>
+
     );
 }
 

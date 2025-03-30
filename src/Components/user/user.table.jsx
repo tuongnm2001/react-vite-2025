@@ -1,18 +1,17 @@
 import { Space, Table, Tag } from 'antd';
 import { fetchAllUser } from '../../services/api.service';
 import { useEffect, useState } from 'react';
+import ModalUpdateUser from './modal.update.user';
 
-const UserTable = () => {
+const UserTable = (props) => {
 
-    const [dataUser, setDataUser] = useState([])
+    const { dataUser, getAllUser } = props;
+    const [isShowModalUpdateUser, setIsShowModalUpdateUser] = useState(false)
+    const [dataEditUser, setDataEditUser] = useState([])
 
-    useEffect(() => {
-        getAllUser();
-    }, [])
-
-    const getAllUser = async () => {
-        const res = await fetchAllUser();
-        setDataUser(res.data);
+    const handleEditUser = (record) => {
+        setIsShowModalUpdateUser(true)
+        setDataEditUser(record);
     }
 
     const columns = [
@@ -38,22 +37,12 @@ const UserTable = () => {
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <a>Edit</a>
+                    <a onClick={() => handleEditUser(record)}>Edit</a>
                     <a>Delete</a>
                 </Space>
             ),
         },
     ];
-
-    // const data = [
-    //     {
-    //         _id: dataUser._id,
-    //         fullName: dataUser.fullName,
-    //         email: dataUser.email,
-    //         address: 'New York No. 1 Lake Park',
-    //         tags: ['nice', 'developer'],
-    //     }
-    // ];
 
     return (
         <>
@@ -61,6 +50,13 @@ const UserTable = () => {
                 columns={columns}
                 rowKey={'_id'}
                 dataSource={dataUser}
+            />
+
+            <ModalUpdateUser
+                open={isShowModalUpdateUser}
+                setOpen={setIsShowModalUpdateUser}
+                dataEditUser={dataEditUser}
+                getAllUser={getAllUser}
             />
         </>
     );

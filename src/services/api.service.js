@@ -15,6 +15,15 @@ const fetchAllUser = () => {
     return axios.get(`/api/v1/user`)
 }
 
+const updateUser = (id, fullName, phoneNumber) => {
+    const data = {
+        _id: id,
+        fullName: fullName,
+        phone: phoneNumber
+    }
+    return axios.put('api/v1/user', data)
+}
+
 export {
-    createUserApi, fetchAllUser
+    createUserApi, fetchAllUser, updateUser
 }

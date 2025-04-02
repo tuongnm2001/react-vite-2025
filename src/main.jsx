@@ -29,12 +29,6 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/register",
-        element: <RegisterPage />,
-      },
-
-
-      {
         path: "/users",
         element: <UserPage />,
       },
@@ -45,6 +39,10 @@ const router = createBrowserRouter([
         element: <ProductPage />,
       }
     ]
+  },
+  {
+    path: "/register",
+    element: <RegisterPage />,
   },
 ]);
 

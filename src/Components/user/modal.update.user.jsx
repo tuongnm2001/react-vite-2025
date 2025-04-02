@@ -1,6 +1,6 @@
 import { Input, Modal, notification } from "antd";
 import { useEffect, useState } from "react";
-import { InfoOutlined, LockOutlined, MailOutlined, PhoneOutlined, UserOutlined } from "@ant-design/icons";
+import { InfoOutlined, PhoneOutlined, UserOutlined } from "@ant-design/icons";
 import { updateUser } from "../../services/api.service";
 
 const ModalUpdateUser = (props) => {
@@ -43,7 +43,7 @@ const ModalUpdateUser = (props) => {
                 width={600}
             >
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <Input value={id} onChange={(e) => setId(e.target.value)} size="large" placeholder="Id" prefix={<InfoOutlined />} readOnly />
+                    <Input value={id} onChange={(e) => setId(e.target.value)} size="large" placeholder="Id" prefix={<InfoOutlined />} disabled />
                     <Input value={fullName} onChange={(e) => setFullName(e.target.value)} size="large" placeholder="Fullname" prefix={<UserOutlined />} />
                     <Input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} size="large" placeholder="Phone Number" prefix={<PhoneOutlined />} />
                 </div>

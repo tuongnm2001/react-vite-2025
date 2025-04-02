@@ -7,7 +7,7 @@ const App = () => {
     <>
       <HeaderPage />
       <Outlet />
-      <FooterPage />
+      {/* <FooterPage /> */}
     </>
   )
 }

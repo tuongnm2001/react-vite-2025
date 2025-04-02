@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Input, Modal, notification } from 'antd';
 import { Button } from 'antd';
 import { useState } from 'react';
